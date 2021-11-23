@@ -1,10 +1,17 @@
-import { createElement, Component } from "react";
+import { Component } from "react";
 
-export function App(props) {
-  console.log(props);
-  return (
-    <div className="App">
-      <h1>Helloy {props.message.text} </h1>
-    </div>
-  );
+export class App extends Component {
+  constructor(props) {
+    super(props);
+    this.id = null;
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.click}>++Counter</button>
+      </div>
+    );
+  }
 }
