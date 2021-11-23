@@ -1,14 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { App } from "./App";
-import { Message } from "./components/Message";
+import { AppHooks } from "./app-hooks";
 
-const message = { text: "Meesage Props" };
+class Test extends React.Component {
+  state = {
+    isVisible: true,
+  };
+  toogle = () => {
+    this.setState({ isVisible: !this.state.isVisible });
+  };
+  render() {
+    const { isVisible } = this.state;
+    return (
+      <div>
+        <button onClick={this.toogle}>Toogle</button>
+        {isVisible && <App />}
+      </div>
+    );
+  }
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App message={message} />
-    <Message />
+    <Test />
+    <AppHooks />
   </React.StrictMode>,
   document.getElementById("root")
 );
