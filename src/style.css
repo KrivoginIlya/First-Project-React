@@ -1,3 +1,10 @@
 .message {
-  border:2px solid blue;
+  list-style-type: none;
+  text-align: center;
+  border-radius: 10px;
+  width: 250px;
+  height: 25px;
+  background-color: rgb(92, 86, 122);
+  margin: 3px;
+  color: rgb(255, 252, 249);
 }
