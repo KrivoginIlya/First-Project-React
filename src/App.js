@@ -1,17 +1,19 @@
-import {Component} from "react";
+import React from "react";
+import Grid from "@material-ui/core/Grid";
 
-export class App extends Component {
-  constructor(props) {
-    super(props);
-    this.id = null;
-    this.state = {};
-  }
+import { MessageList, ChatList } from "./components";
 
-  render() {
-    return (
-      <div>
-        <button onClick={this.click}>++Counter</button>
-      </div>
-    );
-  }
-}
+export const App = () => {
+  return (
+    <div>
+      <Grid container spacing={3}>
+        <Grid item={true} xs={3}>
+          <ChatList />
+        </Grid>
+        <Grid item={true} xs={9}>
+          <MessageList />
+        </Grid>
+      </Grid>
+    </div>
+  );
+};
